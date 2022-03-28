@@ -1,21 +1,15 @@
-import { useAddress, useDisconnect, useMetamask } from '@thirdweb-dev/react';
+import { useAddress, useMetamask } from '@thirdweb-dev/react';
 
-function App() {
+const App = () => {
   const address = useAddress();
   const connectWithMetamask = useMetamask();
-  const disconnectWallet = useDisconnect();
-  return (
+  
+   return (
     <div>
-      {address ? (
-        <>
-          <button onClick={disconnectWallet}>Disconnect Wallet</button>
-          <p>Your address: {address}</p>
-        </>
-      ) : (
-        <button onClick={connectWithMetamask}>Connect with Metamask</button>
-      )}
+     <button onClick={connectWithMetamask}>Connect with Metamask</button>
+     <p>Your address: {address}</p>
     </div>
-  );
+  )
 }
 
 export default App;
